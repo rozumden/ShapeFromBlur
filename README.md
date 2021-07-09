@@ -1,7 +1,7 @@
 ## Shape from Blur: Recovering Textured 3D Shape and Motion of Fast Moving Objects
 ### [YouTube](https://youtu.be/hPYWh9KGiu8) | [arXiv](https://arxiv.org/abs/2106.08762)
 
-<img src="examples/imgs/aerobie.gif" height="180"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/football.gif" height="180">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/vol.gif" height="180"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="examples/imgs/key.gif" height="180">
+<img src="examples/imgs/aerobie.gif" height="180"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/football.gif" height="180">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/vol.gif" height="180"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="examples/imgs/key__new.gif" height="180">
 
 ### Prerequisites 
 Make sure to download the submodule: official open-source DeFMO implementation: https://github.com/rozumden/DeFMO.
