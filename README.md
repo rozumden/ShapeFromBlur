@@ -1,9 +1,7 @@
-# ShapeFromBlur
+## Shape from Blur: Recovering Textured 3D Shape and Motion of Fast Moving Objects
+### [YouTube](https://youtu.be/hPYWh9KGiu8) | [arXiv](https://arxiv.org/abs/2106.08762)
 
-### [Shape from Blur: Recovering Textured 3D Shape and Motion of Fast Moving Objects](https://arxiv.org/abs/2106.08762)
-#### Denys Rozumnyi, Martin R. Oswald, Vittorio Ferrari, Marc Pollefeys
-
-### Qualitative results on [YouTube](https://youtu.be/hPYWh9KGiu8)
+<img src="examples/imgs/aerobie.gif" width="200"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/football.gif" width="200">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/vol.gif" width="200"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="examples/imgs/key.gif" width="200">
 
 ### Prerequisites 
 Make sure to download the submodule: official open-source DeFMO implementation: https://github.com/rozumden/DeFMO.
@@ -11,7 +9,9 @@ Please, also set up the DeFMO pre-trained models in main_settings.py by setting 
 
 Kaolin is available here: https://github.com/NVIDIAGameWorks/kaolin
 
+
 ### Running
+![Examples](examples/imgs/sfb.png)
 
 The code can be easily run by:
 ```bash
@@ -27,9 +27,9 @@ python optimize.py --im examples/pen_im.png --bgr examples/pen_bgr.png
 
 The results will be written to the output folder.
 
-
 Reference
 ------------
+![Examples](examples/imgs/sfb_method.png)
 If you use this repository, please cite the following [publication](https://arxiv.org/abs/2012.00595):
 
 ```bibtex
