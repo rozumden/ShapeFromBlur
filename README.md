@@ -36,9 +36,8 @@ If you use this repository, please cite the following [publication](https://arxi
 @misc{sfb,
   title = {Shape from Blur: Recovering Textured 3D Shape and Motion of Fast Moving Objects},
   author = {Denys Rozumnyi and Martin R. Oswald and Vittorio Ferrari and Marc Pollefeys},
-  year = {2021},
-  eprint = {2106.08762},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.CV}
+  booktitle = {NeurIPS},
+  month = dec,
+  year = {2021}
 }
 ```
