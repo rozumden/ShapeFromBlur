@@ -4,9 +4,6 @@
 <img src="examples/imgs/aerobie.gif" height="160"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/football.gif" height="160">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="examples/imgs/vol.gif" height="160"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="examples/imgs/key__new.gif" height="160">
 
 ### Prerequisites 
-Make sure to download the submodule: official open-source DeFMO implementation: https://github.com/rozumden/DeFMO.
-Please, also set up the DeFMO pre-trained models in main_settings.py by setting the variable g_saved_models_folder.
-
 Kaolin is available here: https://github.com/NVIDIAGameWorks/kaolin
 
 
@@ -37,7 +34,7 @@ If you use this repository, please cite the following [publication](https://arxi
   title = {Shape from Blur: Recovering Textured 3D Shape and Motion of Fast Moving Objects},
   author = {Denys Rozumnyi and Martin R. Oswald and Vittorio Ferrari and Marc Pollefeys},
   booktitle = {NeurIPS},
-  month = dec,
+  month = {Dec},
   year = {2021}
 }
 ```

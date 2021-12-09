@@ -11,9 +11,7 @@ from models.encoder import *
 from models.rendering import *
 from models.loss import *
 
-from main_settings import *
-from DeFMO.models.encoder import EncoderCNN
-from DeFMO.models.rendering import RenderingCNN
+from kornia.feature import DeFMO
 from torchvision import transforms
 
 from scipy.ndimage.filters import gaussian_filter
@@ -22,22 +20,20 @@ class ShapeFromBlur():
     def __init__(self, config, device = None):
         self.config = config
         self.device = device
-        self.encoder = EncoderCNN().to(device)
-        self.rendering = RenderingCNN().to(device)
-        self.encoder.load_state_dict(torch.load(os.path.join(g_saved_models_folder, 'encoder_best.pt'),map_location=device))
-        self.rendering.load_state_dict(torch.load(os.path.join(g_saved_models_folder, 'rendering_best.pt'),map_location=device))
-        self.encoder.train(False)
-        self.rendering.train(False)
+        self.defmo = DeFMO(pretrained=True).to(device)
+        self.defmo.train(False)
 
     def apply(self,I,B,bbox_tight,nsplits,radius,obj_dim):
+        g_resolution_x = int(640/2)
+        g_resolution_y = int(480/2)
+        self.defmo.rendering.tsr_steps = nsplits*self.config["factor"]
+        self.defmo.rendering.times = torch.linspace(0.01,0.99,nsplits*self.config["factor"])
         bbox = extend_bbox(bbox_tight.copy(),4.0*np.max(radius),g_resolution_y/g_resolution_x,I.shape)
         im_crop = crop_resize(I, bbox, (g_resolution_x, g_resolution_y))
         bgr_crop = crop_resize(B, bbox, (g_resolution_x, g_resolution_y))
         input_batch = torch.cat((transforms.ToTensor()(im_crop), transforms.ToTensor()(bgr_crop)), 0).unsqueeze(0).float()
         with torch.no_grad():
-            latent = self.encoder(input_batch.to(self.device))
-            renders = self.rendering(latent,torch.linspace(0.01,0.99,nsplits*self.config["factor"]).to(self.device)[None].repeat(1,1))
-
+            renders = self.defmo(input_batch.to(self.device))
         renders_rgba = renders[0].data.cpu().detach().numpy().transpose(2,3,1,0)
         est_hs = rev_crop_resize(renders_rgba,bbox,np.zeros((I.shape[0],I.shape[1],4)))
         
