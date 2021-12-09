@@ -68,7 +68,7 @@ class ShapeFromBlur():
             if prot == 'sphere':
                 ivertices, faces, iface_features = generate_initial_mesh(config["mesh_size"])
             else:
-                mesh = load_obj(os.path.join('/cluster/home/denysr/src/ShapeFromBlur/prototypes',prot+'.obj'))
+                mesh = load_obj(os.path.join('.','prototypes',prot+'.obj'))
                 ivertices = mesh.vertices.numpy()
                 faces = mesh.faces.numpy().copy()
                 iface_features = mesh.uvs[mesh.face_uvs_idx].numpy()
